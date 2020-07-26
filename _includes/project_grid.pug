@@ -1,0 +1,11 @@
+section.listing
+  .content-wrap.listing-wrap
+    .grid-sizer
+    | {% for image in site.static_files %}
+    | {% if image.path contains 'small_JPG' %}
+    .listing-item
+        .listing-item__image
+          img(src="{{ site.baseurl }}{{ image.path }}")
+        
+    | {% endif %}
+    | {% endfor %}

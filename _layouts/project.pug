@@ -1,0 +1,16 @@
+doctype
+html
+    | {% include head %}
+    body.ajax-loading
+      | {% include header %}
+      .page
+        .page__content
+          section.intro
+            .wrap
+              | {% if page.teaser  %}
+              img(src="{{ site.baseurl }}{{ page.teaser }}")
+              | {% endif %}
+              p
+              | {{ content | markdownify }}
+          | {% assign projects = site.projects %}
+          | {% include project_grid %}
